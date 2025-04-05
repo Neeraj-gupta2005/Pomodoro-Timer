@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import NavbarButton from "./NavbarButton";
 import PendingSVG from "./../svg/PendingSVG";
 import CompletedSVG from "./../svg/CompletedSVG";
+import SideArrow from "./../svg/SideArrow";
+import CalendarSVG from './../svg/CalendarSVG';
 
 function Pomodoro() {
   return (
@@ -31,15 +33,23 @@ function Pomodoro() {
             />
           </div>
 
-          <div className="text-center gap-2">
+          <div className="text-center gap-2 flex justify-center ">
             <NavbarButton
-              text={"Pending"}
-              Icon={PendingSVG}
+              text={"05 Apr"}
+              Icon={CalendarSVG}
               isArrow={false}
               classes={
-                "h-full px-2 p-0.5 flex items-center gap-1 text-[12px] cursor-pointer hover:bg-zinc-700 hover:text-zinc-300 bg-zinc-800 rounded-md cursor-pointer "
+                " flex px-1 items-center text-xs gap-1 justify-between cursor-pointer hover:bg-zinc-700 hover:text-zinc-300 bg-zinc-800 rounded-md cursor-pointer "
               }
             />
+            <div className="flex gap-0.5">
+              <div className="text-zinc-500 p-1 rounded-md cursor-pointer hover:bg-zinc-700 hover:text-zinc-100 duration-100 transition-all mb-1 rotate-180">
+                <SideArrow />
+              </div>
+              <div className="text-zinc-500 p-1 rounded-md cursor-pointer hover:bg-zinc-700 hover:text-zinc-100 duration-100 transition-all mb-1">
+                <SideArrow />
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full rounded-2xl flex-1 bg-zinc-900 border border-zinc-800 p-3">
