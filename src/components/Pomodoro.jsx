@@ -5,6 +5,9 @@ import PendingSVG from "./../svg/PendingSVG";
 import CompletedSVG from "./../svg/CompletedSVG";
 import SideArrow from "./../svg/SideArrow";
 import CalendarSVG from "./../svg/CalendarSVG";
+import Button from "./Button";
+import AdjustManually from './../svg/AdjustManually';
+import Fullscreen from './../svg/Fullscreen';
 
 function Pomodoro() {
   return (
@@ -74,16 +77,50 @@ function Pomodoro() {
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
             </div>
-            <p className="text-[14px] mb-1 text-zinc-600 ">No tasks for this day</p>
-            <p className="text-[14px] text-zinc-500 underline hover:text-zinc-100 cursor-pointer">Add a new task</p>
-
-
+            <p className="text-[14px] mb-1 text-zinc-600 ">
+              No tasks for this day
+            </p>
+            <p className="text-[14px] text-zinc-500 underline hover:text-zinc-100 cursor-pointer">
+              Add a new task
+            </p>
           </div>
         </div>
 
         {/* rightpart */}
-        <div className="w-full rounded-2xl flex-1 bg-zinc-900 border border-zinc-800 p-3">
-          h
+        <div className="flex p-4 items-center flex-col justify-between w-full rounded-2xl flex-1 bg-zinc-900 border border-zinc-800 ">
+          <div className="w-full flex gap-1 items-end justify-end">
+            <AdjustManually/>
+            <Fullscreen/>
+          </div>
+
+          <div className="w-1/2 flex flex-col ">
+            <div className="w-full flex flex-col items-center justify-center p-2">
+              <div className="flex items-center gap-2 ">
+                <Button text={"Focus"} />
+                <Button text={"Short Break"} />
+                <Button text={"Long Break"} />
+              </div>
+              <div className="text-8xl font-sans font-bold text-zinc-50 flex text-end gap-3 py-10 px-2">
+                <p>25</p>
+                <p>:</p>
+                <p>00</p>
+              </div>
+              <div className="rounded-xl bg-zinc-800 w-full h-1" />
+              <div className="flex gap-2 text-[14px] text-zinc-500 justify-evenly my-3 w-full">
+                <p>+ 25 min</p>
+                <p>+ 10 min</p>
+                <p>+ 5 min</p>
+                <p>+ 1 min</p>
+              </div>
+              <div className="mt-3">
+                <Button text={"Start"} />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-zinc-700">No sessions today</p>
+          </div>
         </div>
       </div>
     </div>
