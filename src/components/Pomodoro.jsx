@@ -1,60 +1,48 @@
 import React from "react";
+import Navbar from "./Navbar";
 import NavbarButton from "./NavbarButton";
-import FolderIcon from "../svg/Foldericon";
-import GeneralSVG from "../svg/GeneralSVG";
-import FeedbackSVG from "./../svg/FeedbackSVG";
-import FocusSVG from "./../svg/FocusSVG";
+import PendingSVG from "./../svg/PendingSVG";
+import CompletedSVG from "./../svg/CompletedSVG";
 
 function Pomodoro() {
   return (
-    <div className="flex flex-1 flex-col h-full">
-      {/* navbar */}
-      <div className="h-[33px] justify-between flex items-center text-center pl-2 w-full bg-zinc-900 border-b border-b-zinc-800">
-        <div className="flex gap-2">
-          <p className="text-[14px] font-sans p-0.5">Pomodoro</p>
-          <p className="text-[14px] text-zinc-700 mr-2 font-sans">/</p>
-          <NavbarButton text={"Personal"} Icon={FolderIcon} isArrow={true} />
-          <NavbarButton text={"General"} Icon={GeneralSVG} isArrow={true} />
-        </div>
-        <div className="flex h-full gap-2">
-          <div className="flex h-full ">
-            <NavbarButton
-              text={"Feedback"}
-              Icon={FeedbackSVG}
-              isArrow={false}
-              classes={
-                "h-full px-1 flex items-center gap-1 cursor-pointer hover:bg-zinc-800 "
-              }
-            />
-            <NavbarButton
-              text={"Focus"}
-              Icon={FocusSVG}
-              isArrow={false}
-              classes={
-                "h-full px-1 flex items-center gap-1 cursor-pointer hover:bg-zinc-800 "
-              }
-            />
-          </div>
-          <div className="flex h-full">
-            <div className="h-full px-1 flex items-center gap-1 text-[14px]">
-              <span className="text-zinc-50 ">11</span>
-              <span>:</span>
-              <span className="text-zinc-50 ">20</span>
-              <span>AM</span>
-            </div>
-            <div className="h-full bg-zinc-800 text-zinc-400 px-2 flex items-center gap-1 text-[14px] font-bold  cursor-pointer hover:bg-zinc-700 ml-1 transition duration-100">
-              <span>12</span>
-              <span>hr</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-col h-full w-full">
+      <Navbar />
 
-      <div className="flex flex-1 flex-grow flex-col lg:flex-row gap-3 p-3">
-        <div className="rounded-2xl w-[498px]  bg-zinc-900 border border-zinc-800 p-3">
-          h
+      {/* main content */}
+      <div className=" flex flex-1 flex-grow flex-col lg:flex-row gap-3 p-3">
+        <div className=" w-[398px] rounded-2xl flex justify-between items-start bg-zinc-900 border border-zinc-800 p-3">
+          <div className="flex items-center text-center gap-2 ">
+            <NavbarButton
+              text={"Pending"}
+              Icon={PendingSVG}
+              isArrow={false}
+              classes={
+                "h-full px-2 p-0.5 gap-1 text-[12px]  bg-zinc-800 rounded-md "
+              }
+            />
+            <NavbarButton
+              text={"Completed"}
+              Icon={CompletedSVG}
+              isArrow={false}
+              classes={
+                "h-full p-0.5 px-1 gap-1 cursor-pointer hover:bg-zinc-800 rounded-md text-[12px] "
+              }
+            />
+          </div>
+
+          <div className="text-center gap-2">
+            <NavbarButton
+              text={"Pending"}
+              Icon={PendingSVG}
+              isArrow={false}
+              classes={
+                "h-full px-2 p-0.5 flex items-center gap-1 text-[12px] cursor-pointer hover:bg-zinc-700 hover:text-zinc-300 bg-zinc-800 rounded-md cursor-pointer "
+              }
+            />
+          </div>
         </div>
-        <div className="rounded-2xl flex-1 bg-zinc-900 border border-zinc-800 p-3">
+        <div className="w-full rounded-2xl flex-1 bg-zinc-900 border border-zinc-800 p-3">
           h
         </div>
       </div>
